@@ -1,0 +1,28 @@
+{
+    "tasks": [
+        {
+            "label": "Compilar «cifrado-cesar»",
+            "type": "shell",
+            "command": "make",
+            "windows": {
+                "command": "mingw32-make.exe",
+            },
+            "args": [
+                "cifrado-cesar"
+            ],
+            "problemMatcher": ["$gcc"],
+            "group": "build",
+        },
+        {
+            "label": "Ejecutar «cifrado-cesar»",
+            "type": "shell",
+            "command": "bin/cifrado-cesar",
+            "windows": {
+                "command": "chcp 65001 ; bin\\cifrado-cesar.exe",
+            },
+            "dependsOn": "Compilar «cifrado-cesar»",
+            "problemMatcher": ["$gcc"],
+        },
+   ],
+    "version": "2.0.0"
+}
