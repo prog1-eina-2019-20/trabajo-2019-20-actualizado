@@ -38,3 +38,17 @@ $(BIN_DIR):
 
 $(BUILD_DIR):
 	mkdir $(BUILD_DIR)
+
+clean:
+ifeq ($(OS),Windows_NT)
+	rmdir /S /Q $(BIN_DIR) $(BUILD_DIR)
+else
+	rm -f $(OBJECTS) $(TESTING_OBJECTS) $(BIN_DIR)/*
+endif
+
+clean:
+ifeq ($(OS),Windows_NT)
+	rmdir /S /Q $(BIN_DIR) $(BUILD_DIR)
+else
+	rm -f $(OBJECTS) $(TESTING_OBJECTS) $(BIN_DIR)/*
+endif
