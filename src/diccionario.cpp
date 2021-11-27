@@ -87,10 +87,11 @@ bool cargarDiccionario(Diccionario& dicc) {
     ifstream f(FICH_DICCIONARIO);
     if (f.is_open()) {
         dicc.numPalabras = 0;
-        getline(f, dicc.palabras[dicc.numPalabras]);
-        while (!f.eof() && dicc.numPalabras < MAX_PALABRAS - 1) {
+        while (getline(f, dicc.palabras[dicc.numPalabras]) 
+               && dicc.numPalabras < MAX_PALABRAS - 1) {
+        // Mientras se leen los datos del flujo y la última lectura es correcta
+            // Se procesa el último dato leído: 
             dicc.numPalabras++;
-            getline(f, dicc.palabras[dicc.numPalabras]);
         }
         f.close();
         dicc.cargado = true;
@@ -166,16 +167,9 @@ bool contarPalabras(const string nombreFichero,
         // delimitadores de «palabras» válidos: ' ' y '\n' («getline» solo
         // permite especificar un delimitador, por lo que no es útil en este
         // caso).
-        // Como el método «eof» solo devuelve true cuando se han leído o
-        // intentado leer más bytes de los que tiene el fichero, se intenta
-        // leer una primera palabra del texto antes de entrar en el bucle y
-        // la palabra siguiente a la última procesada al final del bucle.
-        texto >> palabra;
-
-        while (!texto.eof()) {
-            // texto.eof() es falso: el último intento de lectura (antes de
-            // entrar en el bucle o antes de acabar la iteración anterior),
-            // leyó correctamente una «palabra». Se procesa a continuación:
+        while (texto >> palabra) {
+        // Mientras se leen los datos del flujo y la última lectura es correcta
+            // Se procesa la última «palabra» leída:
             limpiar(palabra);
             if (buscar(palabra, dicc) >= 0) {
                 // El índice devuelto corresponde a una componente válida del
@@ -186,7 +180,6 @@ bool contarPalabras(const string nombreFichero,
                 // Se ha devuelto -1: «palabra» no está en el diccionario.
                 noEncontradas++;
             }
-            texto >> palabra;
         }
         texto.close();
         return true;
