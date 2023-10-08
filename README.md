@@ -13,10 +13,6 @@ Para compilarlo, hay que ejecutar el comando
 ```
     make cifrado-cesar
 ```
-o, en Windows,
-```
-    mingw32-make cifrado-cesar
-```
 o ejecutar la tarea "Compilar «cifrado-cesar»" de VSC.
 
 Para ejecutarlo, una vez compilado, hay que ejecutar el comando

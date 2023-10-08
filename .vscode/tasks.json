@@ -4,9 +4,6 @@
             "label": "Compilar «cifrado-cesar»",
             "type": "shell",
             "command": "make",
-            "windows": {
-                "command": "mingw32-make.exe",
-            },
             "args": [
                 "cifrado-cesar"
             ],
@@ -27,9 +24,6 @@
             "label": "Limpiar resultados de compilación",
             "type": "shell",
             "command": "make",
-            "windows": {
-                "command": "mingw32-make.exe",
-            },
             "args": [
                 "clean"
             ],
