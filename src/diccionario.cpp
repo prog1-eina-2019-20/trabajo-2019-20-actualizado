@@ -96,8 +96,7 @@ bool cargarDiccionario(Diccionario& dicc) {
         f.close();
         dicc.cargado = true;
         return true;
-    }
-    else {
+    } else {
         cerr << "No se ha podido abrir el fichero \"" << FICH_DICCIONARIO
              << "\"." << endl;
         return false;
@@ -122,16 +121,14 @@ int buscar(const string palabra, const Diccionario& dicc) {
         unsigned med = (inf + sup) / 2;
         if (palabra > dicc.palabras[med]) {
             inf = med + 1;
-        }
-        else {
+        } else {
             sup = med;
         }
     }
 
     if (palabra == dicc.palabras[inf]) {
         return inf;
-    }
-    else {    
+    } else {    
         return -1;
     }
 }
@@ -175,16 +172,14 @@ bool contarPalabras(const string nombreFichero,
                 // El índice devuelto corresponde a una componente válida del
                 // vector: «palabra» se ha encontrado en el diccionario.
                 encontradas++;
-            }
-            else {
+            } else {
                 // Se ha devuelto -1: «palabra» no está en el diccionario.
                 noEncontradas++;
             }
         }
         texto.close();
         return true;
-    }
-    else {
+    } else {
         return false;
     }
 }
