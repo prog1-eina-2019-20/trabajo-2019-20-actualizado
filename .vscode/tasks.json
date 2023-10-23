@@ -1,9 +1,18 @@
 {
     "tasks": [
         {
+            "label": "Open Terminal",
+            "type": "shell",
+            "command": "osascript -e 'tell application \"Terminal\"\ndo script \"echo hello\"\nend tell'",
+            "problemMatcher": []
+        },
+        {
             "label": "Compilar «cifrado-cesar»",
             "type": "shell",
             "command": "make",
+            "windows": {
+                "command": "mingw32-make.exe",
+            },
             "args": [
                 "cifrado-cesar"
             ],
@@ -24,6 +33,9 @@
             "label": "Limpiar resultados de compilación",
             "type": "shell",
             "command": "make",
+            "windows": {
+                "command": "mingw32-make.exe",
+            },
             "args": [
                 "clean"
             ],
