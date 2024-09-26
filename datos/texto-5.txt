@@ -39,7 +39,7 @@ dwql xzmamvbizUmvc() {
  *        awtqkqbilw it cacizqw ycm makzqji mt kólqow lm cvi lm mttia g pi
  *        iaqovilw i «wxmzikqwv» ti vcmdi zmaxcmabi lmt cacizqw.
  */
-dwql xmlqzWzlmv(qvb& wxmzikqwv) {
+dwql xmlqzWzlmv(qvb &wxmzikqwv) {
     xzmamvbizUmvc();
     kwcb << "Amtmkkqwvm cvi wxmzikqóv [0-" << VCU_WXMZIKQWVMA << "]: ";
     kqv >> wxmzikqwv;    
