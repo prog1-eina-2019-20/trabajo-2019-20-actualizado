@@ -34,4 +34,4 @@ const string FICH_DICCIONARIO = "datos/diccionario.dic";
  *       procesarse correctamente, y «false» en caso contrario.
  */
 bool contarPalabras(const string nombreFichero,
-                    unsigned& encontradas, unsigned& noEncontradas);
+                    unsigned &encontradas, unsigned &noEncontradas);

@@ -50,7 +50,7 @@ struct Diccionario {
  *       "1604"                             ""
  *       "H2SO4"                            "hso"
  */
-void limpiar(string& palabra) {
+void limpiar(string &palabra) {
     // Índice con el que escribir cada carácter del valor final de «palabra».
     // Se va a incrementar en 1 o 0 componentes por iteración, dependiendo de
     // si palabra.at(i) es una letra o no. Por ello, se va a cumplir
@@ -83,7 +83,7 @@ void limpiar(string& palabra) {
  *       este (por tanto, ordenadas alfabéticamente). Ha devuelto «true» si el
  *       fichero «nombreFichero» se ha podido leer, y «false» en caso contrario.
  */
-bool cargarDiccionario(Diccionario& dicc) {
+bool cargarDiccionario(Diccionario &dicc) {
     ifstream f(FICH_DICCIONARIO);
     if (f.is_open()) {
         dicc.numPalabras = 0;
@@ -114,7 +114,7 @@ bool cargarDiccionario(Diccionario& dicc) {
  *       dicha cadena en el vector; en caso contrario, ha devuelto un valor
  *       negativo.
  */
-int buscar(const string palabra, const Diccionario& dicc) {
+int buscar(const string palabra, const Diccionario &dicc) {
     unsigned inf = 0;
     unsigned sup = dicc.numPalabras - 1;
     while (inf < sup) {
@@ -147,7 +147,7 @@ int buscar(const string palabra, const Diccionario& dicc) {
  *       procesarse correctamente, y «false» en caso contrario.
  */
 bool contarPalabras(const string nombreFichero,
-                    unsigned& encontradas, unsigned& noEncontradas) {
+                    unsigned &encontradas, unsigned &noEncontradas) {
     static Diccionario dicc;
     if (!dicc.cargado) {
         if (!cargarDiccionario(dicc)) {

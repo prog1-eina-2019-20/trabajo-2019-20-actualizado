@@ -56,4 +56,4 @@ const string DIR_RESULTADOS = "resultados/";
  * parámetro de salida «rutaDestino» será "resultados/quijote-cifrado.txt".
  */
 void pedirNombreFichero(const string mensaje, const string interfijo,
-                        string& rutaOrigen, string& rutaDestino);
+                        string &rutaOrigen, string &rutaDestino);
